@@ -1,0 +1,3 @@
+zfs_packages:
+  - zfs-dkms
+  - zfs-initramfs
