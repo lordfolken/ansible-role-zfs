@@ -1,0 +1,4 @@
+---
+ - name: install zfs dkms
+   apt:
+     name: zfs-dkms 
