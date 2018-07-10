@@ -17,7 +17,9 @@ Supported Platforms:
 Usage:
 ------
 create a variable declartion on a host basis like this:
-``
+
+.. role:: yaml(code)
+:language: yaml
 zfs_zpools:
   zfs1:
     devices: /dev/sda3 /dev/sdb3 /dev/sdc3
@@ -29,6 +31,6 @@ zfs_vols:
     vol_name: docker
     mountpoint: /var/lib/docker
     state: present
-``
+..
 
 
