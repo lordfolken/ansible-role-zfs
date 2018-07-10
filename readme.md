@@ -16,7 +16,7 @@ Supported Platforms:
 
 Usage:
 ------
-create a variable declartion on a host basis like this:
+Create a variable declaration on a host basis along the following:
 
 ```yaml
 zfs_zpools:
@@ -29,5 +29,10 @@ zfs_vols:
   zfs1:
     vol_name: docker
     mountpoint: /var/lib/docker
+    sync: standard
+    vol_size: 10G
     state: present
+    snapdir: visible
+    snapdev: visible 
 ```
+please note: mountpoint,state,volsize,snapdir,sync are optional.
