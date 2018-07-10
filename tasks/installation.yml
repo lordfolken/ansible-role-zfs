@@ -1,4 +1,9 @@
 ---
  - name: install zfs dkms
-   apt:
-     name: zfs-dkms 
+   package:
+     name: '{{ item }}'
+   with_list: '{{ zfs_packages }}'
+
+ - name: ensure zfs module is loaded
+   modprobe:
+     name: '{{ zfs_module_name }}'
