@@ -9,3 +9,16 @@
    command: 'zpool create {{ item.key }} {{ item.value.devices }}'
    with_dict: '{{ zfs_zpools }}'
    when: item.key not in zfs_existing_pools.stdout
+
+ - name: create zvols
+   zfs:
+     name: '{{ item.key }}/{{ item.value.vol_name }}'
+     extra_zfs_properties:
+       snapdir: '{{ item.value.snapdir | default("hidden") }}'
+       snapdev: '{{ item.value.snapdev | default("hidden") }}'
+       volsize: '{{ item.value.volsize | default(omit) }}'
+       sync: '{{ item.value.sync | default("standard") }}'
+       mountpoint: '{{ item.value.mountpoint | default(omit) }}'
+     state: '{{ item.value.state | default("present") }}'
+   with_dict: '{{ zfs_vols }}'  
+

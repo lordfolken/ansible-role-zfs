@@ -23,6 +23,12 @@ zfs_zpools:
     devices: /dev/sda3 /dev/sdb3 /dev/sdc3
   zfs2:
     devices: /dev/sde3 /dev/sdf3
+
+zfs_vols:
+  zfs1:
+    vol_name: docker
+    mountpoint: /var/lib/docker
+    state: present
 ```
 
 
