@@ -1,1 +1,2 @@
 zfs_module_name: zfs
+zfs_zpools: {}
