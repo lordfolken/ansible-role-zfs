@@ -26,8 +26,8 @@ zfs_zpools:
     devices: /dev/sde3 /dev/sdf3
 
 zfs_vols:
-  zfs1:
-    vol_name: docker
+  vmlandscape:
+    pool: zfs
     mountpoint: /var/lib/docker
     sync: standard
     vol_size: 10G

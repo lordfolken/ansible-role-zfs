@@ -12,7 +12,7 @@
 
  - name: create zvols
    zfs:
-     name: '{{ item.key }}/{{ item.value.vol_name }}'
+     name: '{{ item.value.pool }}/{{ item.key }}'
      snapdir: '{{ item.value.snapdir | default("hidden") }}'
      snapdev: '{{ item.value.snapdev | default("hidden") }}'
      volsize: '{{ item.value.volsize | default(omit) }}'
