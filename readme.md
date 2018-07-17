@@ -29,7 +29,7 @@ zfs_zpools:
   zfs2:
     devices: /dev/sde3 /dev/sdf3
 
-zfs_vols:
+zfs_zvols:
   vmlandscape:
     pool: zfs
     mountpoint: /var/lib/docker

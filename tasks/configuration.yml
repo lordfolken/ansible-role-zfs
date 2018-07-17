@@ -19,5 +19,5 @@
      sync: '{{ item.value.sync | default("standard") }}'
      mountpoint: '{{ item.value.mountpoint | default(omit) }}'
      state: '{{ item.value.state | default("present") }}'
-   with_dict: '{{ zfs_vols }}'  
+   with_dict: '{{ zfs_zvols }}'  
 
