@@ -38,5 +38,6 @@ zfs_zvols:
     state: present
     snapdir: visible
     snapdev: visible 
+    compression: lz4
 ```
-please note: mountpoint,state,volsize,snapdir,sync are optional.
+please note: mountpoint,state,volsize,snapdir,sync,compression are optional.
