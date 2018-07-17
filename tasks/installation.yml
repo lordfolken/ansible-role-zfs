@@ -4,6 +4,11 @@
      name: '{{ item }}'
    with_list: '{{ zfs_packages }}'
 
+ - name: install kernel headers for current kernel
+   package:
+     name: "{{ zfs_kernel_package-prefix }}{{ ansible_kernel }}"
+   notify: rebuild_kernelmodules
+
  - name: ensure zfs module is loaded
    modprobe:
      name: '{{ zfs_module_name }}'

@@ -1,3 +1,4 @@
 zfs_packages:
   - zfs-dkms
   - zfs-initramfs
+zfs_kernel_package_prefix: linux-headers-

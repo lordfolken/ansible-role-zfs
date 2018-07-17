@@ -13,6 +13,10 @@ Supported Platforms:
 --------------------
 - Debian stretch
 
+Changelog:
+----------
+- Install linux-headers
+
 
 Usage:
 ------
