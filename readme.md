@@ -29,7 +29,7 @@ zfs_zpools:
   zfs2:
     devices: /dev/sde3 /dev/sdf3
 
-zfs_vols:
+zfs_zvols:
   vmlandscape:
     pool: zfs
     mountpoint: /var/lib/docker
@@ -38,5 +38,6 @@ zfs_vols:
     state: present
     snapdir: visible
     snapdev: visible 
+    compression: lz4
 ```
-please note: mountpoint,state,volsize,snapdir,sync are optional.
+please note: mountpoint,state,volsize,snapdir,sync,compression are optional.

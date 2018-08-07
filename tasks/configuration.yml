@@ -16,8 +16,9 @@
      snapdir: '{{ item.value.snapdir | default("hidden") }}'
      snapdev: '{{ item.value.snapdev | default("hidden") }}'
      volsize: '{{ item.value.volsize | default(omit) }}'
+     compression: '{{ item.value.compression | default("none") }}'
      sync: '{{ item.value.sync | default("standard") }}'
      mountpoint: '{{ item.value.mountpoint | default(omit) }}'
      state: '{{ item.value.state | default("present") }}'
-   with_dict: '{{ zfs_vols }}'  
+   with_dict: '{{ zfs_zvols }}'  
 
