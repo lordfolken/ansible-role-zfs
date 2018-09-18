@@ -1,13 +1,12 @@
 ---
+ - name: install kernel headers for current kernel
+   package:
+     name: "{{ zfs_kernel_package_prefix }}{{ ansible_kernel }}"
+
  - name: install zfs dkms
    package:
      name: '{{ item }}'
    with_list: '{{ zfs_packages }}'
-
- - name: install kernel headers for current kernel
-   package:
-     name: "{{ zfs_kernel_package_prefix }}{{ ansible_kernel }}"
-   notify: rebuild_kernelmodules
 
  - name: ensure zfs module is loaded
    modprobe:

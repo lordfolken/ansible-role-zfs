@@ -1,3 +1,0 @@
----
- - name: rebuild_kernelmodules
-   command: dkms autoinstall zfs
