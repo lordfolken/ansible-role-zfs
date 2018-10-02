@@ -25,9 +25,9 @@ Create a variable declaration on a host basis along the following:
 ```yaml
 zfs_zpools:
   zfs1:
-    devices: /dev/sda3 /dev/sdb3 /dev/sdc3
+    devices: /dev/disk/by-id/wwid... /dev/disk/by-id/wwid... /dev/disk/by-id/wwid...
   zfs2:
-    devices: /dev/sde3 /dev/sdf3
+    devices: /dev/disk/by-id/wwid... /dev/disk/by-id/wwid...
 
 zfs_zvols:
   vmlandscape:
