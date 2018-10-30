@@ -2,3 +2,4 @@ zfs_packages:
   - zfs-dkms
   - zfs-initramfs
 zfs_kernel_package_prefix: linux-headers-
+zfs_repo_url: http://httpredir.debian.org/debian
