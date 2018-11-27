@@ -30,8 +30,8 @@ zfs_zpools:
     devices: /dev/disk/by-id/wwid... /dev/disk/by-id/wwid...
 
 zfs_zvols:
-  vmlandscape:
-    pool: zfs
+  docker:
+    pool: zfs1
     mountpoint: /var/lib/docker
     sync: standard
     vol_size: 10G
