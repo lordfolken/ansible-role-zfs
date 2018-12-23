@@ -6,7 +6,7 @@
    failed_when: false
 
  - name: create zpools
-   command: 'zpool create {{ item.key }} {{ item.value.raidmode | default(raidz) }} {{ item.value.devices }}'
+   command: 'zpool create {{ item.key }} {{ item.value.raidmode | default("raidz") }} {{ item.value.devices }}'
    with_dict: '{{ zfs_zpools }}'
    when: 
      - item.key not in zfs_existing_pools.stdout
@@ -15,6 +15,7 @@
  - name: create log for zpool
    command: 'zpool add -f {{ item.key }} log {{ item.value.zildevices }}'
    with_dict: '{{ zfs_zpools }}'
+   when:
      - item.key not in zfs_existing_pools.stdout
      - zfs_zpools is defined
      - item.value.zildevices is defined
@@ -22,9 +23,10 @@
  - name: create cache for zpool
    command: 'zpool add -f {{ item.key }} cache {{ item.value.cachedevices }}'
    with_dict: '{{ zfs_zpools }}'
+   when:
      - item.key not in zfs_existing_pools.stdout
      - zfs_zpools is defined
-     - item.value.zildevices is defined
+     - item.value.cachedevices is defined
 
  - name: create zvols
    zfs:
@@ -32,7 +34,7 @@
      snapdir: '{{ item.value.snapdir | default("hidden") }}'
      snapdev: '{{ item.value.snapdev | default("hidden") }}'
      volsize: '{{ item.value.volsize | default(omit) }}'
-     compression: '{{ item.value.compression | default("none") }}'
+     compression: '{{ item.value.compression | default("off") }}'
      sync: '{{ item.value.sync | default("standard") }}'
      mountpoint: '{{ item.value.mountpoint | default(omit) }}'
      state: '{{ item.value.state | default("present") }}'
