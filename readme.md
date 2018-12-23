@@ -26,6 +26,7 @@ Create a variable declaration on a host basis along the following:
 zfs_zpools:
   zfs1:
     devices: /dev/disk/by-id/wwid... /dev/disk/by-id/wwid... /dev/disk/by-id/wwid...
+    raidmode: raidz or mirror
   zfs2:
     devices: /dev/disk/by-id/wwid... /dev/disk/by-id/wwid...
 
@@ -40,4 +41,4 @@ zfs_zvols:
     snapdev: visible 
     compression: lz4
 ```
-please note: mountpoint,state,volsize,snapdir,sync,compression are optional.
+please note: raidmode,mountpoint,state,volsize,snapdir,sync,compression are optional.
