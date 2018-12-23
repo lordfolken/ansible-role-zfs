@@ -27,6 +27,8 @@ zfs_zpools:
   zfs1:
     devices: /dev/disk/by-id/wwid... /dev/disk/by-id/wwid... /dev/disk/by-id/wwid...
     raidmode: raidz or mirror
+    zildevices: /dev/disk-by-id/wwid..
+    cachedevices: /dev/disk-by-id/wwid..
   zfs2:
     devices: /dev/disk/by-id/wwid... /dev/disk/by-id/wwid...
 
@@ -41,4 +43,4 @@ zfs_zvols:
     snapdev: visible 
     compression: lz4
 ```
-please note: raidmode,mountpoint,state,volsize,snapdir,sync,compression are optional.
+please note: zildevices,cachedevices,raidmode,mountpoint,state,volsize,snapdir,sync,compression are optional.
