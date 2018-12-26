@@ -14,7 +14,7 @@
 - nane: include os specific prerequisite tasks
   include: '{{ item }}'
   with_first_found:
-    - files: 
+    - files:
       - '{{ ansible_distribution }}_{{ ansible_distribution_major_version }}.yml'
       - '{{ ansible_os_family }}.yml'
       skip: true

@@ -8,7 +8,7 @@
  - name: create zpools
    command: 'zpool create {{ item.key }} {{ item.value.raidmode | default("raidz") }} {{ item.value.devices }}'
    with_dict: '{{ zfs_zpools }}'
-   when: 
+   when:
      - item.key not in zfs_existing_pools.stdout
      - zfs_zpools is defined
 
@@ -39,6 +39,6 @@
      mountpoint: '{{ item.value.mountpoint | default(omit) }}'
      state: '{{ item.value.state | default("present") }}'
      acltype: 'posixacl'
-   with_dict: '{{ zfs_zvols }}'  
-   when: 
+   with_dict: '{{ zfs_zvols }}'
+   when:
      - zfs_zvols is defined
