@@ -26,7 +26,7 @@ Create a variable declaration on a host basis along the following:
 zfs_zpools:
   zfs1:
     devices: /dev/disk/by-id/wwid... /dev/disk/by-id/wwid... /dev/disk/by-id/wwid...
-    raidmode: raidz or mirror
+    raidmode: raidz or mirror (or leave blank for stripe set)
     zildevices: /dev/disk-by-id/wwid..
     cachedevices: /dev/disk-by-id/wwid..
   zfs2:
