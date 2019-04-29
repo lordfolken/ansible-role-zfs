@@ -6,7 +6,7 @@
    failed_when: false
 
  - name: create zpools
-   command: 'zpool create {{ item.key }} {{ item.value.raidmode | default("raidz") }} {{ item.value.devices }}'
+   command: 'zpool create {{ item.key }} {{ item.value.raidmode | default() }} {{ item.value.devices }}'
    with_dict: '{{ zfs_zpools }}'
    when:
      - item.key not in zfs_existing_pools.stdout
