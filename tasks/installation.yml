@@ -3,7 +3,6 @@
    package:
      name: "{{ zfs_kernel_package_prefix }}{{ ansible_kernel }}"
 
-
  - name: install zfs dkms
    apt:
      name: '{{ zfs_packages }}'
