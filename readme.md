@@ -12,6 +12,7 @@ Features:
 Supported Platforms:
 --------------------
 - Debian stretch
+- Debian buster
 
 Changelog:
 ----------

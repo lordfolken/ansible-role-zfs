@@ -3,11 +3,22 @@
    package:
      name: "{{ zfs_kernel_package_prefix }}{{ ansible_kernel }}"
 
+
  - name: install zfs dkms
    apt:
      name: '{{ zfs_packages }}'
      default_release: '{{ ansible_distribution_release }}-backports'
-   when: ansible_distribution == 'Debian'
+   when: 
+    - ansible_distribution == 'Debian'
+    - ansible_distribution_major_version < "10"
+
+ - name: install zfs dkms
+   apt:
+     name: '{{ zfs_packages }}'
+     default_release: '{{ ansible_distribution_release }}-backports'
+   when: 
+    - ansible_distribution == 'Debian'
+    - ansible_distribution_major_version >= "10"
 
  - name: install zfs dkms
    package:
