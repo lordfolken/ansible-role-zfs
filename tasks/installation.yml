@@ -7,14 +7,14 @@
    apt:
      name: '{{ zfs_packages }}'
      default_release: '{{ ansible_distribution_release }}-backports'
-   when: 
+   when:
     - ansible_distribution == 'Debian'
     - ansible_distribution_major_version < "10"
 
  - name: install zfs dkms
    apt:
      name: '{{ zfs_packages }}'
-   when: 
+   when:
     - ansible_distribution == 'Debian'
     - ansible_distribution_major_version >= "10"
 
