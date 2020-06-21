@@ -44,4 +44,13 @@ zfs_zvols:
     snapdev: visible 
     compression: lz4
 ```
-please note: zildevices,cachedevices,raidmode,mountpoint,state,volsize,snapdir,sync,compression are optional.
+The following arguments are optional: 
+* zildevices
+* cachedevices 
+* raidmode 
+* mountpoint
+* state 
+* volsize
+* snapdir 
+* sync
+* compression
